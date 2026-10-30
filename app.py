@@ -2,6 +2,26 @@ import streamlit as st
 import joblib
 import numpy as np
 import warnings
+
+import sys
+import subprocess
+
+print("Python version:", sys.version)
+print("Python path:", sys.executable)
+
+subprocess.run([
+    sys.executable,
+    "-m",
+    "pip",
+    "show",
+    "joblib"
+])
+
+import joblib
+
+print("Joblib imported successfully!")
+print("Joblib version:", joblib.__version__)
+
 warnings.filterwarnings("ignore")
 
 model=joblib.load("Random_search.pkl")#Uploding the Optimized Machine Learning model
